@@ -152,7 +152,7 @@ my_OPC3d <-
         if (leftOffset < -1) {
             warning("Left offset less than -1 may restrict mesh visibility")
         }
-        rgl.viewpoint(fov = fieldofview)
+        view3d(fov = fieldofview)
         ZView <- par3d("observer")[3]
         XView <- leftOffset * ZView * 0.055
         observer3d(XView, 0, ZView)
@@ -272,7 +272,7 @@ molarServer <- shinyServer(function(input, output) {
 
         Outply <- show_OPC3d()
         if(!is.null(Outply))
-            rgl.viewpoint(theta = 0, phi = input$slider1, fov=input$fov)
+            view3d(theta = 0, phi = input$slider1, fov=input$fov)
         rgl::rglwidget()
     })
 
