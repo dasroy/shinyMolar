@@ -322,5 +322,5 @@ molarServer <- shinyServer(function(input, output) {
 #' @importFrom shiny shinyApp
 #' @examples
 shinyMolaR <- function(){
-    shinyApp(ui = molarUi, server = molarServer)
+    shinyApp(ui = molarUi, server = molarServer, options =  list(launch.browser = TRUE))
 }

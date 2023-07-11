@@ -6,15 +6,19 @@
 <!-- badges: start -->
 <!-- badges: end -->
 
-The shinyMolar provides an UI interface of molaR package
+The shinyMolar is an extension of
+[molaR](https://cran.r-project.org/package=molaR) package to provide an
+UI interface for OPC function.
 
 ## Installation
 
 You can install the development version of shinyMolar from
-[GitHub](https://github.com/) with:
+[GitHub](https://github.com/dasroy/shinyMolar) with:
 
 ``` r
-# install.packages("devtools")
+if(!require(devtools)) { 
+    install.packages("devtools")
+}
 devtools::install_github("dasroy/shinyMolar")
 ```
 
@@ -27,6 +31,7 @@ library(shinyMolar)
 shinyMolaR()
 ```
 
-Now copy and open the URL from your console to browser.
+By default the application will be launch in a browser (which is
+required), otherwise copy and open the URL from your console to browser.
 
 ![](Screenshot_shinyMolaR.png)
