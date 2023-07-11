@@ -57,7 +57,7 @@ my_OPC3d <-
         bins <- plyFile$Directional_Bins
         BinCount <- as.numeric(length(unique(plyFile$Directional_Bins)))
         BlackPatch <- NULL
-        print(binColors)
+        # print(binColors)
         for (i in 1:BinCount) {
             Bin <- which(bins == i)
             bins[Bin] <- binColors[i]
@@ -221,7 +221,7 @@ molarServer <- shinyServer(function(input, output) {
 
     df_products_upload <- reactive({
         inFile <- req(input$target_upload)
-        print(input$target_upload)
+        # print(input$target_upload)
         if (is.null(inFile))
             return(NULL)
 
