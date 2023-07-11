@@ -153,7 +153,7 @@ my_OPC3d <-
         if (leftOffset < -1) {
             warning("Left offset less than -1 may restrict mesh visibility")
         }
-        view3d(fov = fieldofview)
+        rgl::view3d(fov = fieldofview)
         ZView <- par3d("observer")[3]
         XView <- leftOffset * ZView * 0.055
         observer3d(XView, 0, ZView)

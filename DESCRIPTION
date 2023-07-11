@@ -1,6 +1,6 @@
 Package: shinyMolar
 Title: What the Package Does (One Line, Title Case)
-Version: 5.3.5
+Version: 5.3.51
 Authors@R: 
     person("Rishi", "Das Roy", , "rishi.dasroy@gmail.com", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0002-3276-7279"))
