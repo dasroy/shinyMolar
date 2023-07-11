@@ -211,7 +211,7 @@ molarUi <- shinyUI(
             p("Download the image with right click"),
             h4("Total patch count"),textOutput("text"),
             # rglwidgetOutput("rglDNE", width = "512px", height = "512px"),
-            rglwidgetOutput("rglOPC", width = "512px", height = "512px")
+            rgl::rglwidgetOutput("rglOPC", width = "512px", height = "512px")
         )
     )
 )
@@ -267,13 +267,13 @@ molarServer <- shinyServer(function(input, output) {
     })
 
 
-    output$rglOPC<- renderRglwidget({
+    output$rglOPC<- rgl::renderRglwidget({
         # options(rgl.useNULL=TRUE)
         # options(rgl.printRglwidget = TRUE)
 
         Outply <- show_OPC3d()
         if(!is.null(Outply))
-            view3d(theta = 0, phi = input$slider1, fov=input$fov)
+            rgl::view3d(theta = 0, phi = input$slider1, fov=input$fov)
         rgl::rglwidget()
     })
 
@@ -291,8 +291,8 @@ molarServer <- shinyServer(function(input, output) {
         },
         content = function(file) {
             Outply <- show_OPC3d()
-            print(Outply)
-            vcgPlyWrite(mesh = Outply, filename = file, binary = FALSE)
+            # print(Outply)
+            Rvcg::vcgPlyWrite(mesh = Outply, filename = file, binary = FALSE)
         }
     )
 
@@ -304,7 +304,7 @@ molarServer <- shinyServer(function(input, output) {
             Outply <- show_OPC3d()
             # rgl::rglwidget()
             # rgl.snapshot(filename = file)
-            snapshot3d(filename = file,webshot = rgl.useNULL())
+            rgl::snapshot3d(filename = file,webshot = rgl.useNULL())
         }
     )
 
