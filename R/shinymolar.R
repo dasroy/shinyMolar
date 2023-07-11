@@ -227,9 +227,9 @@ molarServer <- shinyServer(function(input, output) {
 
         Tooth <-  Rvcg::vcgPlyRead(file = inFile$datapath)
         shinyFeedback::feedbackWarning("target_upload",
-                                       dim(vcgBary(Tooth))[1]>10000,
+                                       dim(Rvcg::vcgBary(Tooth))[1]>10000,
                                        paste("Total number of faces",
-                                             dim(vcgBary(Tooth))[1],
+                                             dim(Rvcg::vcgBary(Tooth))[1],
                                              "\n(Should be less than 10000)"))
         Tooth$name <- inFile$name
         return(Tooth)
