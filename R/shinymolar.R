@@ -154,9 +154,9 @@ my_OPC3d <-
             warning("Left offset less than -1 may restrict mesh visibility")
         }
         rgl::view3d(fov = fieldofview)
-        ZView <- par3d("observer")[3]
+        ZView <- rgl::par3d("observer")[3]
         XView <- leftOffset * ZView * 0.055
-        observer3d(XView, 0, ZView)
+        rgl::observer3d(XView, 0, ZView)
         if (!is.na(fileName)) {
             if (!is.character(fileName)) {
                 stop("Enter a name for fileName")
