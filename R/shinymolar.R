@@ -1,5 +1,6 @@
 # ulimit set in sudo vi /etc/security/limits.conf
 # Cstack_info()["size"]
+library(shiny)
 options(rgl.useNULL=TRUE)
 
 #' This function checks if required Packages are available or not. If there are any packages are missing
@@ -318,7 +319,7 @@ molarServer <- shinyServer(function(input, output) {
 #'
 #' @return
 #' @export
-#'
+#' @importFrom shiny shinyApp
 #' @examples
 shinyMolaR <- function(){
     shinyApp(ui = molarUi, server = molarServer)

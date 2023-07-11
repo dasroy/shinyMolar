@@ -2,3 +2,4 @@
 
 export(loadPackages)
 export(shinyMolaR)
+importFrom(shiny,shinyApp)
