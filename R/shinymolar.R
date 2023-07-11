@@ -246,7 +246,7 @@ molarServer <- shinyServer(function(input, output) {
             )
         on.exit(removeNotification(id), add = TRUE)
         tryCatch({
-            OPC1 <- OPC(Tooth, rotation = 22.5)
+            OPC1 <- molaR::OPC(Tooth, rotation = 22.5)
             OPC1$name <- Tooth$name
             return(OPC1)
         },
