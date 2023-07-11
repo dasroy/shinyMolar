@@ -86,8 +86,8 @@ my_OPC3d <-
         if (maskDiscard == TRUE) {
             colormatrix[BlackPatch] <- "#000000"
         }
-        open3d()
-        par3d(windowRect = c(100, 100, 900, 900))
+        rgl::open3d()
+        rgl::par3d(windowRect = c(100, 100, 900, 900))
         if (patchOutline == TRUE) {
             for (i in 1:BinCount) {
                 Orientation <- OPC_Output_Object$Patches[i]
@@ -130,7 +130,7 @@ my_OPC3d <-
             }
         }
 
-        shade3d(plyFile, meshColor = "faces", color = colormatrix,
+        rgl::shade3d(plyFile, meshColor = "faces", color = colormatrix,
                 shininess = seg_alpha,lit=toLit,alpha= shape_alpha)
         if (legend == TRUE) {
             if (legendScale <= 0) {
