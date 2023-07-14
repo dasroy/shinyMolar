@@ -86,7 +86,7 @@ my_OPC3d <-
         if (maskDiscard == TRUE) {
             colormatrix[BlackPatch] <- "#000000"
         }
-        rgl::open3d()
+        rgl::open3d(useNULL = TRUE)
         rgl::par3d(windowRect = c(100, 100, 900, 900))
         if (patchOutline == TRUE) {
             for (i in 1:BinCount) {
